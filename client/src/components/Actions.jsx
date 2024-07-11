@@ -8,7 +8,6 @@ const Actions = () => {
   const [activeItems, setActiveItems] = useState({});
 
   const actionItems = [
-    'For My Action',
     'Leave Applications',
     'Employment Claims',
     'Contract Renewals',
@@ -27,7 +26,10 @@ const Actions = () => {
   };
 
   return (
-    <div className='h-screen w-[30%] p-4 m-4 shadow-md bg-white rounded-md'>
+    <div className='h-screen w-[30%] p-4 m-4 mt-7 shadow-md bg-white rounded-md'>
+      <div className="flex justify-between text-center text-[12px] font-light border-b border-gray-300">For My actions
+        <span><FaTasks/></span>
+      </div>
       <div className='p-0 m-0 font-thin text-[12px]'>
         <ul className='max-h-[100vh] overflow-y-auto'>
           {actionItems.map((item) => (
