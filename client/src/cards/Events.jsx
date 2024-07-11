@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import { FaTasks } from 'react-icons/fa';
+import { FaTasks, FaRegCalendarAlt } from 'react-icons/fa';
 
 const Events = () => {
 
@@ -15,12 +15,12 @@ const Events = () => {
     
     <div className="bg-white  w-[52vw] h-[30vh] ml-8 shadow-md rounded-lg p-4 font-light text-[12px]">
         <div className="flex justify-between text-center border-b border-gray-300">Upcoming Events
-        <span><FaTasks/></span>
+        <span><FaRegCalendarAlt/></span>
         </div>
         {/* Add your announcement content here */}
         <div className="flex grid-cols-1 gap-4 justify-center items-center">
                 {events.map((event, index) => (
-                    <div key={index} className="grid justify-center items-center p-4 bg-gray-40 rounded-sm border-r border-gray-500">
+                    <div key={index} className="grid justify-center items-center p-4 bg-gray-40 rounded-sm border-r border-gray-500 overflow-hidden">
                         <div className="mr-4 text-left">
                             <div className="text-[12px] ">{event.month}</div>
                             <div className="text-lg text-gray-500 font-bold">{event.date}</div>

@@ -23,7 +23,7 @@ const AnnouncementsCard = () => {
   return (
     <div className="bg-white w-[15vw] shadow-md rounded-lg p-4 font-light text-[12px] overflow-hidden">
       <div className="text-center border-b border-gray-300 max-w-full">Announcements</div>
-      <ul>
+      <ul className='max-h-[22vh] overflow-y-auto'>
         {Announcements.map((Announcement) => (
           <React.Fragment key={Announcement}>
             <li

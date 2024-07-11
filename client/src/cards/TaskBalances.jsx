@@ -7,7 +7,7 @@ import { AiOutlineRight, AiOutlineDown } from 'react-icons/ai';
 const TaskBalances = () => {
   const [activeItems, setActiveItems] = useState({});
 
-  //Tasks
+  // Tasks
   const tasks = [
     'My Tasks',
     'Team Tasks',
@@ -24,12 +24,12 @@ const TaskBalances = () => {
     description: 'Task Description: Lorem ipsum dolor sit amet, consectetur adipiscing',
   }];
 
-  //Leave Balances
+  // Leave Balances
   const leaves = [
     'My Leave Balances',
     'Team Leave Balances',
   ];
-  const leaveDescs=[{
+  const leaveDescs = [{
     description: 'Maternity Leave',
     days: '15 Days'
   },
@@ -45,8 +45,7 @@ const TaskBalances = () => {
     description: 'Sick Leave',
     days: '05 Days'
   }
-]
-
+];
 
   const toggleItem = (item) => {
     setActiveItems((prevState) => ({
@@ -56,7 +55,7 @@ const TaskBalances = () => {
   };
 
   return (
-    <div className='flex m-2 max-w-full overflow-hidden'>
+    <div className='flex m-2 max-w-full '>
       <div className="bg-white w-[24vw] h-[30vh] ml-8 mt-2 shadow-md rounded-lg p-4 font-light text-[12px]">
         <div className="flex justify-between text-center border-b border-gray-300">
           Tasks
@@ -92,7 +91,7 @@ const TaskBalances = () => {
         </div>
       </div>
 
-      <div className="bg-white w-[24vw] h-[30vh] ml-8 mt-2 shadow-md rounded-lg p-4 font-light text-[12px]">
+      <div className="bg-white w-[24vw] h-[30vh] ml-8 mt-2 shadow-md rounded-lg p-4 font-light text-[12px] ">
         <div className="flex justify-between text-center border-b border-gray-500">
           Leave Balances
           <span><FaTasks /></span>
@@ -117,7 +116,6 @@ const TaskBalances = () => {
                         <p className='flex justify-between'>{leaveDesc.description}
                           <span>{leaveDesc.days}</span>
                         </p>
-                        
                       </div>
                     ))}
                   </div>

@@ -13,7 +13,7 @@ const TodayAtGlanceCard = () => {
   return (
     <div className="bg-white w-[20vw] text-[12px] font-light shadow-md rounded-lg p-4">
       <div className="text-center border-b border-gray-300">Today at a Glance</div>
-        <ul>
+        <ul className='max-h-[22vh] overflow-y-auto'>
           
           
             <li  className='flex justify-between  cursor-pointer h-[7vh] rounded items-center m-0.5 p-2 shadow-md border border-gray-300 '>

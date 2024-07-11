@@ -15,10 +15,10 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className=" w-[20%] bg-gray-600 text-white text-[12px] text-center h-screen">
+    <div className="w-[20%] bg-gray-600 text-white text-[12px] text-center h-screen">
       <div className="p-4">
         <div className="justify-center items-center">
-          <button className="bg-yellow-500 py-2 px-4 rounded-full mb-4 ">
+          <button className="bg-yellow-500 py-2 px-4 rounded-full mb-4">
             One Connect HD
           </button>
         </div>

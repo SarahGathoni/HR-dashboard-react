@@ -29,7 +29,7 @@ const Actions = () => {
   return (
     <div className='h-screen w-[30%] p-4 m-4 shadow-md bg-white rounded-md'>
       <div className='p-0 m-0 font-thin text-[12px]'>
-        <ul>
+        <ul className='max-h-[100vh] overflow-y-auto'>
           {actionItems.map((item) => (
             <React.Fragment key={item}>
               <li
