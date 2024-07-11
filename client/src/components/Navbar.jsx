@@ -35,7 +35,7 @@ const Navbar = () => {
 
       {/* Profile icon with rounded blue background */}
       
-        <img src="/src/assets/woman.jpg" alt="profile" className="ml-4 rounded-full  w-10 h-10"/>
+        <img src="https://www.pexels.com/photo/woman-in-collared-shirt-774909/" alt="profile" className="ml-4 rounded-full  w-10 h-10"/>
       
     </div>
   );
