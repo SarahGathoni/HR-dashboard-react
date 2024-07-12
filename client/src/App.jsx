@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+
+import React, { useState } from 'react';
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Actions from "./components/Actions";
@@ -6,18 +9,34 @@ import Events from "./cards/Events";
 import TaskBalances from "./cards/TaskBalances";
 
 const App = () => {
+  const [activeItem, setActiveItem] = useState('Dashboard');
+
+  const renderContent = () => {
+    switch (activeItem) {
+      case 'Dashboard':
+        return (
+          <>
+            <Actions className="w-1/4" />
+            <div className="flex flex-col flex-1 p-4">
+              <Allcards />
+              <Events />
+              <TaskBalances />
+            </div>
+          </>
+        );
+      // Add other cases here for different sidebar items
+      default:
+        return <div>Select a menu item</div>;
+    }
+  };
+
   return (
     <div className="flex h-screen">
-      <Sidebar />
+      <Sidebar activeItem={activeItem} setActiveItem={setActiveItem} />
       <div className="flex flex-col w-full">
         <Navbar className="w-full" />
         <div className="flex flex-1 bg-gray-200">
-          <Actions className="w-1/4" />
-          <div className="flex flex-col flex-1 p-4">
-            <Allcards />
-            <Events />
-            <TaskBalances />
-          </div>
+          {renderContent()}
         </div>
       </div>
     </div>
