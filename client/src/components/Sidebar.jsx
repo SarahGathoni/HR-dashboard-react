@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+
 import { useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
@@ -20,7 +21,7 @@ const Sidebar = ({ activeItem, setActiveItem }) => {
   };
 
   return (
-    <div className="relative">
+    <div>
       {/* Menu Icon */}
       <div className="md:hidden p-4">
         <button onClick={toggleSidebar}>
@@ -31,15 +32,17 @@ const Sidebar = ({ activeItem, setActiveItem }) => {
           )}
         </button>
       </div>
+      
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-screen bg-gray-600 text-white text-[12px] text-center transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-screen lg:w-full lg:h-full bg-gray-600 text-white text-[12px] transition-transform duration-300 ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
         } md:relative md:translate-x-0 md:w-[20%] lg:w-[20%]`}
+        style={{ zIndex: 50 }} // Ensures the sidebar is on top
       >
         <div className="p-4 h-full">
-          <div className="flex justify-between items-center mb-4">
-            <button className="bg-yellow-500 py-2 px-4 rounded-full">
+          <div className="flex justify-between items-center">
+            <button className="bg-yellow-500 py-2 px-4 rounded-full mb-4 md:hidden">
               One Connect HD
             </button>
             <button
@@ -63,7 +66,7 @@ const Sidebar = ({ activeItem, setActiveItem }) => {
                   }`}
                   onClick={() => {
                     setActiveItem(item);
-                    if (isSidebarOpen) toggleSidebar(); // Close sidebar on item click if it's open
+                    if (isSidebarOpen) toggleSidebar(); // Close sidebar on item click if open
                   }}
                 >
                   <div className="w-8 h-8 mr-2"></div>

@@ -33,7 +33,7 @@ const App = () => {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex ">
       <Sidebar activeItem={activeItem} setActiveItem={setActiveItem} />
       <div className="flex flex-col w-full">
         <Navbar className="w-full" />
