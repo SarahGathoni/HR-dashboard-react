@@ -15,14 +15,16 @@ const App = () => {
     switch (activeItem) {
       case 'Dashboard':
         return (
-          <>
-            <Actions className="w-1/4" />
-            <div className="flex flex-col flex-1 p-4">
-              <Allcards />
-              <Events />
-              <TaskBalances />
-            </div>
-          </>
+          <div className="flex flex-col-reverse md:flex-row flex-1 p-4">
+          <div className="md:w-1/4">
+            <Actions />
+          </div>
+          <div className="flex-1">
+            <Allcards />
+            <Events />
+            <TaskBalances />
+          </div>
+        </div>
         );
       // Add other cases here for different sidebar items
       default:

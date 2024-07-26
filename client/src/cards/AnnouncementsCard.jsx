@@ -4,14 +4,13 @@ import { AiOutlineRight, AiOutlineDown } from 'react-icons/ai';
 
 const AnnouncementsCard = () => {
   const [activeItems, setActiveItems] = useState({});
+  const [isExpanded, setIsExpanded] = useState(false); // State for toggling on small and medium devices
 
-  const Announcements = [
+  const announcements = [
     'Announcement 1',
     'Announcement 2',
     'Announcement 3',
   ];
-
-  
 
   const toggleItem = (item) => {
     setActiveItems((prevState) => ({
@@ -20,24 +19,44 @@ const AnnouncementsCard = () => {
     }));
   };
 
+  const toggleExpansion = () => {
+    setIsExpanded((prevState) => !prevState);
+  };
+
   return (
-    <div className="bg-white w-[15vw] shadow-md rounded-lg p-4 font-light text-[12px] overflow-hidden">
-      <div className="text-center border-b border-gray-300 max-w-full">Announcements</div>
-      <ul className='max-h-[22vh] overflow-y-auto'>
-        {Announcements.map((Announcement) => (
-          <React.Fragment key={Announcement}>
+    <div
+      className={`bg-white w-full sm:w-[20vw] md:w-[15vw] lg:w-[20vw] shadow-md rounded-md p-4 font-light text-[12px] transition-all duration-300 ${
+        isExpanded ? 'h-auto' : 'h-[8vh] lg:h-auto'
+      }`}
+    >
+      <div className="flex justify-between items-center border-b border-gray-300 mb-2">
+        <span>Announcements</span>
+        <span
+          className={`cursor-pointer text-black${isExpanded ? 'hidden md:block' : 'block md:hidden'}`}
+          onClick={toggleExpansion}
+        >
+          {isExpanded ? <AiOutlineDown /> : <AiOutlineRight />}
+        </span>
+      </div>
+      <ul
+        className={`max-h-[75vh] overflow-y-auto ${
+          isExpanded ? 'block' : 'hidden md:block'
+        }`}
+      >
+        {announcements.map((announcement) => (
+          <React.Fragment key={announcement}>
             <li
-              className="flex justify-between cursor-pointer h-[7vh] rounded items-center m-0.5 shadow-md border border-gray-300"
-              onClick={() => toggleItem(Announcement)}
+              className="flex justify-between cursor-pointer h-[7vh] rounded-sm items-center m-0.5 p-2 shadow-md border border-gray-300"
+              onClick={() => toggleItem(announcement)}
             >
-              <span>{Announcement}</span>
+              <span>{announcement}</span>
               <span>
-                {activeItems[Announcement] ? <AiOutlineDown /> : <AiOutlineRight />}
+                {activeItems[announcement] ? <AiOutlineDown /> : <AiOutlineRight />}
               </span>
             </li>
-            {Announcement === 'Announcement 1' && activeItems[Announcement] && (
-              <div className="ml-4 mt-2">
-                <p>Lem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            {activeItems[announcement] && (
+              <div className="ml-4 mt-2 text-sm bg-gray-100 p-2 rounded-sm border border-gray-300">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </div>
             )}
           </React.Fragment>
